@@ -9,7 +9,7 @@ export default function Fetchdata() {
         const fetchaingdata = async () =>{
 
                 try{
-                    const res = await fetch("https://fakestoreapi.com/products")
+                    const res = await fetch("  https://api.escuelajs.co/api/v1/categories")
                     const jsondata = await res.json()
                     console.log(jsondata)
                     // .then(jsondata => setdata(jsondata.data))
