@@ -1,0 +1,52 @@
+.container{
+  height: auto;
+  width: 100%;
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+  gap: 30px;
+  background-color: aquamarine;
+}
+
+h1{
+  color: orange;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  background-color: black;
+  margin: 5px 0px;
+  height: 50px;
+  text-decoration: underline rgb(224, 70, 165);
+}
+h1 span{
+color: blue;
+}
+
+.box{
+  height: 400px;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: black;
+}
+
+.box img{
+  height: 250px;
+  width: 75%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+p{
+  margin: 10px 0px;
+  color: white;
+}
+
+h3{
+  color: white;
+}
