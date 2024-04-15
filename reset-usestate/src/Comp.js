@@ -22,12 +22,13 @@ function Comp(props) {
 
   return (
   
-        <div>
+      <div>
             <img src={props.Image}/>
         <h1>Likes : {count}</h1>
         <button onClick={increment} id='left'>Like</button>
         <button onClick={Decrement}>Deslike</button>
         <button onClick={reset}>Reset</button>
+        
     </div>
     
    
