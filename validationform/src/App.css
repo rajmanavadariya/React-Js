@@ -1,0 +1,54 @@
+body{
+  background-color: cadetblue;
+}
+
+.cen{
+  /* width: 20%; */
+  margin-left: 500px;
+  /* border: 1px solid black; */
+  margin-top: 170px;
+}
+
+label{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#in1{
+  font-size: 30px;
+  margin-left: 50px;
+  width: 30%;
+  height: 40px;
+  border: 0;
+  box-shadow: 2px 3px 8px 10px gray;
+  
+}
+
+#in2{
+  font-size: 30px;
+  margin-left: 100px;
+  width: 30%;
+  height: 40px;
+  border: 0;
+  box-shadow: 2px 3px 8px 10px gray;
+  
+}
+
+#in3{
+  font-size: 30px;
+  margin-left: 50px;
+  width: 30%;
+  height: 40px;
+  border: 0;
+  box-shadow: 2px 3px 8px 10px gray;
+}
+
+button{
+  padding: 10px 235px;
+  font-size: 25px;
+  background-color: blueviolet;
+  border: 0;
+  border-radius: 20px;
+  color: aliceblue;
+  font-weight: bold;
+}
