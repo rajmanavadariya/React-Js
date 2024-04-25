@@ -40,7 +40,7 @@ button{
 @media (max-width : 480px){
   form{
     width: 300px;
-
+    height: auto;
   }
 
   input{
@@ -49,5 +49,6 @@ button{
 
   button{
     width: 270px;
+    margin-bottom: 4px;
   }
 }

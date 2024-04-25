@@ -33,14 +33,18 @@ function Form() {
 
         function validate(values) {
             let errors = {}
-            let regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+            let regex = /^\S+@\S+\.\S+$/
+            
 
             if (!values.username) {
                 errors.username = "Username Is Required"
             }
 
-            if (!regex.test(values.email)) {
+            if (!values.email) {
                 errors.email = "Email Is Required"
+
+            }else if (!regex.test(values.email)) {
+                errors.email = "'@' check character"
             }
 
             if (!values.password) {
