@@ -1,0 +1,59 @@
+body{
+  background-color: rgb(39, 138, 142);
+}
+
+#head{
+  color: darkblue;
+}
+
+#bol{
+  margin-top: 10px;
+}
+
+input{
+  width: 300px;
+  margin-top: 15px;
+  height: 30px;
+  border: 0px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#sub{
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: green;
+  color: aliceblue;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+th{
+  padding: 10px;
+  color: indigo;
+}
+
+#edit{
+  padding: 5px 10px;
+  background-color: green;
+  color: aliceblue;
+  font-size: 15px;
+  border: none;
+  border-radius: 50%;
+}
+
+#del{
+  padding: 5px 10px;
+  background-color: red;
+  color: aliceblue;
+  font-size: 15px;
+  border: none;
+  border-radius: 50%;
+}
+
+#name{
+  font-weight: bold;
+}
+
