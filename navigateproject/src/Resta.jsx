@@ -14,12 +14,12 @@ function handleDelet(id){
       {
         posts.map((el) => (
           <div key={el.id}> 
-            <h2>{el.title}</h2>
-            <p>{el.content}</p>
-            <button onClick={()=>handleDelet(el.id)}>Delete</button>
+            <h2 id='head'>{el.title}</h2>
+            <p id='para'>{el.content}</p>
+            <button onClick={()=>handleDelet(el.id)} id='btndel'>Delete</button>
 
             <Link to={`/edit/${el.id}`}>
-              <button>Edit</button>
+              <button id='edit'>Edit</button>
             </Link>
           </div>
         ))
