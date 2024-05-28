@@ -10,7 +10,7 @@ function Data() {
     useEffect(() => {
       const savedDetails = JSON.parse(localStorage.getItem('details')) || [];
       setDetails(savedDetails);
-    }, []);
+    }, []);         
     
     useEffect(() => {
       localStorage.setItem('details', JSON.stringify(details));
@@ -23,7 +23,7 @@ function Data() {
 
     const handleSubmit = (e) => {
       e.preventDefault();
-      if (isEditing) {
+      if (isEditing) {             
         const updatedDetails = [...details];
         updatedDetails[editingIndex] = newDetails;
         setDetails(updatedDetails);

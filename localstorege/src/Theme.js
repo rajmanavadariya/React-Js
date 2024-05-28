@@ -1,85 +1,99 @@
-import React from 'react'
-import { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Theme() {
-    const [det, setdet] = useState([])
-    const [newdetails, setnewdetails] = useState({ name: '', age: '', occupation: '' })
-  
+    const [details, setDetails] = useState([]);
+    const [newDetails, setNewDetails] = useState({ name: '', age: '', occupation: '' });
+    const [isEditing, setIsEditing] = useState(false);
+    const [editingIndex, setEditingIndex] = useState(-1);
     
     useEffect(() => {
-      const saveddet = JSON.parse(localStorage.getItem('det')) || []
-      setdet(saveddet)
-    }, [])
-  
+      const savedDetails = JSON.parse(localStorage.getItem('details')) || [];
+      setDetails(savedDetails);
+    }, []);
     
     useEffect(() => {
-      localStorage.setItem('det', JSON.stringify(det))
-    }, [det])
+      localStorage.setItem('details', JSON.stringify(details));
+    }, [details]);
   
     const handleChange = (e) => {
-      const { name, value } = e.target
-      setnewdetails({ ...newdetails, [name]: value })
-    }
-  
+      const { name, value } = e.target;
+      setNewDetails({ ...newDetails, [name]: value });
+    };
+
     const handleSubmit = (e) => {
-      e.preventDefault()
-      setdet([...det, newdetails])
-      setnewdetails({ name: '', age: '', occupation: '' })
-    }
-  
+      e.preventDefault();
+      if (isEditing) {
+        const updatedDetails = [...details];
+        updatedDetails[editingIndex] = newDetails;
+        setDetails(updatedDetails);
+        setIsEditing(false);
+      } else {
+        setDetails([...details, newDetails]);
+      }
+      setNewDetails({ name: '', age: '', occupation: '' });
+      setEditingIndex(-1);
+    };
+
+    const handleEdit = (index) => {
+      setNewDetails(details[index]);
+      setIsEditing(true);
+      setEditingIndex(index);
+    };
+
+    const handleDelete = (index) => {
+      const filteredDetails = details.filter((_, i) => i !== index);
+      setDetails(filteredDetails);
+    };
+
     return (
       <center>
-          <div>
-        <h1>Details App</h1>
-        <form onSubmit={handleSubmit}>
-          <label>
-             Name<br/>
-            <input type="text" name="title" value={newdetails.title} onChange={handleChange} />
-          </label><br/>
-          <label>
-            Age<br/>
-           <input type="text" name="ingredients" value={newdetails.ingredients} onChange={handleChange} />
-          </label><br/>
-          <label>
-            occupation<br/>
-            <input type="text"  name="occupation" value={newdetails.occupation} onChange={handleChange} />
-          </label><br/>
-          <br/>
-          <button type="submit">Add Details</button>
-        </form>
-      
-        <div className='main'>
-        <table border={3}>
-          <thead>
-            
-            <tr>
-             <th>Name :</th>
-              <th>Age :</th>
-              <th>Occupation :</th>
-              
-            </tr>
-          </thead>
-          <tbody>
-            {det.map((dl, index) => (
-              <tr key={index}>
-                  <td><h3>{dl.title}</h3></td>
-                <td>{dl.ingredients}</td>
-                <td>{dl.occupation}</td>
-  
-                
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      </div>
+        <div>
+          <h1 id='head'>Details App</h1>
+          <form onSubmit={handleSubmit}>
+            <label>
+              <b >Name :</b><br/>
+              <input type="text" name="name" value={newDetails.name} onChange={handleChange} placeholder='Enter your Name' />
+            </label><br/>
+            <label>
+              <b>Age :</b><br/>
+              <input type="text" name="age" value={newDetails.age} onChange={handleChange} placeholder='Enter your Age'/>
+            </label><br/>
+            <label>
+              <b id='bol'>Occupation :</b><br/>
+              <input type="text" name="occupation" value={newDetails.occupation} onChange={handleChange} placeholder='Enter your occupation'/>
+            </label><br/>
+            <br/>
+            <button type="submit" id='sub'>{isEditing ? 'Update Details' : 'Add Details'}</button>
+          </form>
+        
+          <div className='main'>
+            <table border={1}>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Occupation</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {details.map((detail, index) => (
+                  <tr key={index}>
+                    <td id='name'>{detail.name}</td>
+                    <td>{detail.age}</td>
+                    <td>{detail.occupation}</td>
+                    <td>
+                      <button onClick={() => handleEdit(index)} id='edit'>Edit</button>
+                      <button onClick={() => handleDelete(index)} id='del'>Delete</button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </center>
-    )
+    );
 }
 
-export default Theme
-
-
-
-
-
+export default Theme;

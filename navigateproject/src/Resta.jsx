@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import './Resta.css'
 
 
@@ -7,15 +8,20 @@ function Resta({ posts , deletPost }) {
 function handleDelet(id){
   deletPost(id)
 }
+
   return (
     <center>
       <div>
-      <h1 className='suphed'>Welcome To our Restaurant</h1>
+      <h1 className='suphed'>Welcome To our Shop</h1>
       {
         posts.map((el) => (
-          <div key={el.id}> 
+          <div key={el.id} id='box'> 
             <h2 id='head'>{el.title}</h2>
             <p id='para'>{el.content}</p>
+            <img src={URL.createObjectURL(el.image)} alt="post" style={{height : '100px', width : '100px'}}/>
+
+            <br/><br/>
+          
             <button onClick={()=>handleDelet(el.id)} id='btndel'>Delete</button>
 
             <Link to={`/edit/${el.id}`}>

@@ -1,47 +1,59 @@
-.App {
-  text-align: center;
-  font-family: 'Arial', sans-serif;
+body{
+  background-color: rgb(39, 138, 142);
 }
 
-.App-header {
-  background-color: #f0f0f0;
-  min-height: 100vh;
-  padding: 20px;
-  color: #333;
+#head{
+  color: darkblue;
 }
 
-.input-group {
+#bol{
+  margin-top: 10px;
+}
+
+input{
+  width: 300px;
+  margin-top: 15px;
+  height: 30px;
+  border: 0px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+#sub{
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: green;
+  color: aliceblue;
+  border: none;
+  border-radius: 20px;
   margin-bottom: 20px;
 }
 
-.input-field {
+th{
   padding: 10px;
-  margin-right: 10px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
+  color: indigo;
 }
 
-.add-button, .remove-button {
-  padding: 10px 20px;
+#edit{
+  padding: 5px 10px;
+  background-color: green;
+  color: aliceblue;
+  font-size: 15px;
   border: none;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
+  border-radius: 50%;
 }
 
-.add-button {
-  background-color: #007bff;
+#del{
+  padding: 5px 10px;
+  background-color: red;
+  color: aliceblue;
+  font-size: 15px;
+  border: none;
+  border-radius: 50%;
 }
 
-.remove-button {
-  background-color: #dc3545;
+#name{
+  font-weight: bold;
 }
 
-.flavor-item {
-  list-style-type: none;
-  margin-top: 10px;
-  padding: 10px;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}

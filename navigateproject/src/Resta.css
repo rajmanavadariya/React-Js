@@ -37,14 +37,14 @@ button{
 }
 
 #head{
-    color: black;
+    color: white;
     font-size: 30px;
 }
 
 #para{
     font-weight: bold;
     font-size: 20px;
-    color: black;
+    color: white;
 }
 
 #btndel{
@@ -55,4 +55,14 @@ button{
     background-color: green;
     margin-bottom: 20px;
     margin: 15px;
+}
+
+#box{
+    width: 25%;
+    background-color: dimgrey;
+    border-radius: 20px;
+}
+
+#file{
+    font-size: 22px;
 }

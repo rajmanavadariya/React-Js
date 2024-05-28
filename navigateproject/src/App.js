@@ -9,11 +9,12 @@ import Edit from './Edit';
 function App() {
   const [posts, setPosts] = useState([])
 
-  function addnewPost(title,content){
+  function addnewPost(title,content,image){
     let newPost = {
       id : new Date().getTime(),
       title : title,
-      content : content
+      content : content,
+      image : image
     }
     setPosts([...posts, newPost])
    
@@ -25,9 +26,11 @@ function App() {
     )))
         }
         
-        function updatePost(id,title,content) {
-          setPosts(posts.map(post => post.id === id ? {...post,title:title,content:content} : post));
+        function updatePost(id,title,content,image) {
+          setPosts(posts.map(post => post.id === id ? {...post,title:title,content:content,image:image} : post));
         }
+
+       
       
   return (
     <Router>

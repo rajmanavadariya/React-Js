@@ -5,12 +5,17 @@ import { Link, useNavigate } from 'react-router-dom'
 function Item({ addnewPost }) {
     const [title, setTitle] = useState('')
     const [content, setContent] = useState('')
+    const[image,setimage]=useState(null)
     const navigate = useNavigate()
 
     function handleSubmit(e) {
         e.preventDefault()
-        addnewPost(title, content)
+        addnewPost(title, content,image)
         navigate('/')
+    }
+
+    function handlechange(e){
+        setimage(e.target.files[0])
     }
 
     return (
@@ -18,16 +23,19 @@ function Item({ addnewPost }) {
             <div className="add-post-container">
                 <h2>ADD MENU</h2>
                 <form onSubmit={handleSubmit}>
-                    <h1>Food:</h1>
+                    <h1>Name:</h1>
                     <input value={title} onChange={(e) => setTitle(e.target.value)} /> <br/><br/><br/>
 
-                    <h1>Taste:</h1>
+                    <h1>Product:</h1>
                     <input value={content} onChange={(e) => setContent(e.target.value)}/> <br/><br/><br/>
 
-                    <button type='submit'>ADD RECIPE</button><br/><br/><br/>
+                    <h1>Photo :</h1>
+                    <input type="file" onChange={handlechange} id='file'/><br/><br/><br/>
+
+                    <button type='submit'>ADD Product</button><br/><br/><br/>
                 </form>
 
-                <Link to="/" id='link'>Back TO Restaurant</Link>
+                <Link to="/" id='link'>Back TO Product page</Link>
             </div>
         </center>
     )

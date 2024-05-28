@@ -53,25 +53,27 @@ function Crud() {
  
  
    return (
+    <center>
      <div>
          <h1>TO-DO LIST</h1>
  
          <input type='text' placeholder='Enter your task' value={inputvalue} onChange={(e)=>setinputvalue(e.target.value)}/>
-    
-         <button onClick={add}>Add</button>
+        
+         <button onClick={add} id='add'>Add</button>
     
     {
      todos.map((el,i)=>(
     
         <div key={i}>
-          <p key={i}>{el.text}</p>
-          <button onClick={()=>del(el.id)}>Delate</button>
-          <button onClick={()=>edit(el.id)}>Edit</button>
+          <p key={i}>{el.text}  <button onClick={()=>del(el.id)} id='del'>Delate</button>  <button onClick={()=>edit(el.id)}>Edit</button>   </p>
+          <hr/>
+         
+         
          </div>
      ))
     }
      </div>
-     
+   </center>  
    )
  
 }

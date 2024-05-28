@@ -18,7 +18,7 @@ function App() {
     <Sec2 />
     <Trust />
     <Map />
-    <Footer />-
+    <Footer />
     </div>
   );
 }
