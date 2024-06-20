@@ -28,16 +28,6 @@ function Postingdata() {
 
 
 
-
-
-
-
-
-
-
-
-
-
   return (
     <div>
         <form onSubmit={handlesubmit}>
@@ -45,6 +35,7 @@ function Postingdata() {
             Posts : <input type="text" name='body' onChange={handlechange} value={post.body} />
             <button>Submit</button>
         </form>
+
     </div>
   )
 }
