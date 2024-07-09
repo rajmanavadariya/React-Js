@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ref, set, onValue } from "firebase/database";
+import { ref, set, onValue, remove } from "firebase/database";
 import { database } from './Config';
 
 function Firebase() {
@@ -15,6 +15,17 @@ function Firebase() {
                 setName('');
                 setPassword('');
             });
+    }
+
+    const handledelate=(react)=>{
+        const newUser = ref(database, `users/${react}`);
+        remove(newUser)
+        .then(() => {
+           alert("delated")
+          })
+          .catch((error) => {
+            console.log(error);
+          });
     }
 
     useEffect(() => {
@@ -33,6 +44,8 @@ function Firebase() {
         });
     }, []);
 
+ 
+
     return (
         <div>
             <h1>Registration Form</h1>
@@ -47,9 +60,14 @@ function Firebase() {
             </form>
             <h2>Registered Users</h2>
             <ul>
+                
                 {users.map(user => (
+                 <>
                     <h2 key={user.name}>{user.name}</h2>
+                    <button onClick={()=>handledelate(user.name)}>Delate</button>
+                 </>
                 ))}
+                   
             </ul>
         </div>
     );
