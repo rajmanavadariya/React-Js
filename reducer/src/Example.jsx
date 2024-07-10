@@ -12,22 +12,25 @@ function Example() {
     };
     
     const handledecrement = (id) => {
-      dispatch(decrement(id));
+      dispatch(decrement(id)); 
     };
     
     const total = state.prices.reduce((sum, item) => sum + item.value, 0);
-    
+      
     return (
       <div className="container">
         {state.prices.map((item) => (
           <div className="item" key={item.id}>
-            <h1>Price rs. {item.price}</h1>
-            <h1>Amount : {item.value}</h1>
-            <button onClick={() => handleincrement(item.id)}>INCREMENT</button>
-            <button onClick={() => handledecrement(item.id)}>DECREMENT</button>
+            <h1 id='none'>Price rs. {item.price}</h1>
+            <p id='none'><span>Amount :</span> {item.value}</p>
+            <button id='incre' onClick={() => handleincrement(item.id)}>+</button>
+            <button id='decre' onClick={() => handledecrement(item.id)}>-</button>
           </div>
         ))}
-        <h1 className="total">Total : {total}</h1>
+        <div className='bgi'>
+           <h1 className="total">Total : {total}</h1>
+        </div>
+
       </div>
     );
 }
